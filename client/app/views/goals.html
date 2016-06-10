@@ -1,0 +1,30 @@
+<a class="btn btn-primary" href="#/create/goal"><span class="glyphicon glyphicon-plus"></span>Add Goal</a>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr><th>Player</th>
+    <th>Team</th>
+    <th>Description</th>
+    <th>URL</th>
+    <th>Actions</th>
+  </tr></thead>
+  <tbody>
+    <tr ng-repeat="goal in goals">
+      <td><a ng-href="/#/goal/{{ goal._id }}">{{ goal.title }}</a></td>
+      <td>{{ goal.team }}</td>
+      <td>{{ goal.description }}</td>
+      <td>{{ goal.url }}</td>
+      <td>
+        <div class="button-group">
+          <a ng-href="/#/goal/{{ goal._id }}/edit" class="btn btn-default">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+          <a ng-href="/#/goal/{{ goal._id }}/delete" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove-circle"></span>
+          </a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
